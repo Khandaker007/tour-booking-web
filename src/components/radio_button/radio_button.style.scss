@@ -1,0 +1,62 @@
+@import '../../sass/variable.scss';
+@import '../../sass/mixins.scss';
+
+.radio{
+    width: 50%;
+    display: inline-block;
+    padding-bottom: 3rem;
+    &__input{
+        display: none;
+    }
+    &__label{
+        font-size: 1.6rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4rem;
+
+        @include response(tab-port) {
+            color: black;
+            
+        }
+    }
+    &__button{
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $Dark-green;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.6rem;
+        @include response(tab-port) {
+            border: 3px solid white;
+            height: 2rem;
+            width: 2rem;
+            top: 0rem;
+        }
+        
+        &::after{
+            content: '';
+            display: block;
+            height: 1.2rem;
+            width: 1.2rem;
+            border-radius: 50%;
+            background-color: $Dark-green;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all .2s;
+            @include response(tab-port) {
+                background-color: white;
+                height: .75rem;
+                width: .75rem;
+            }
+        }
+    }
+
+    &__input:checked + &__label &__button::after{
+        opacity: 1;
+    }
+}

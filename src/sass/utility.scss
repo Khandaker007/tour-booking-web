@@ -1,0 +1,39 @@
+@import '../sass/variable.scss';
+@import '../sass/mixins.scss';
+
+// CENTER
+.u-center-text{text-align: center;}
+
+//MARGIN 
+.u-margin-bottom-8{margin-bottom: 8rem;}
+.u-margin-bottom-6{margin-bottom: 6rem;}
+.u-margin-bottom-4{margin-bottom: 4rem;}
+.u-margin-bottom-2{margin-bottom: 2rem;}
+
+// HEADING
+.heading-secondary{
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    background-image: linear-gradient(to right, $Medium-green, $Dark-green);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+
+    @include response(tab-port){
+        font-size: 3rem;
+        // @include compCenter;
+    }
+    @include response(phone){
+        font-size: 2.5rem;
+    }
+}
+
+.heading-tertiary{
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.u-footer-row-width{width: 90%}

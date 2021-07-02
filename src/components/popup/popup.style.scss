@@ -1,0 +1,63 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variable.scss';
+
+.popup{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: rgba(black, .85);
+    opacity: 1;
+    visibility: visible;
+
+    &:target{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__content{
+        @include compCenter;
+        width: 70%;
+        background-color: white;
+        display: table;
+    }
+
+    &__left{
+        width: 33.333333%;
+        display: table-cell;
+    }
+
+    &__right{
+        width: 66.666667%;
+        display: table-cell;
+        padding: 3rem 5rem;
+        vertical-align: middle;
+    }
+    
+    &__img{
+        width: 100%;
+        display: block;
+    }
+
+    &__text{
+        font-size: 1.4rem;
+        column-count: 2;
+        column-gap: 2.5rem;
+        column-rule: 1px solid $dark-gray-2;
+
+        hyphens: auto;
+    }
+
+    &__close{
+        text-decoration: none;
+        font-size: 3.5rem;
+        color: $dark-gray-2;
+        position: absolute;
+        top: 1rem;
+        right: 3rem;
+
+    }
+
+}

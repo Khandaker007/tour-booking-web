@@ -1,0 +1,52 @@
+@import '../../sass/variable.scss';
+@import '../../sass/mixins.scss';
+
+.group{
+    // display: ;
+    &:not(:last-child){
+        margin-bottom: 2rem;
+    }
+    &__input{
+        padding: 1.5rem 2rem 1.2rem 2rem;
+        display: block;
+        width: 90%;
+        font-family: inherit;
+        color: black;
+        font-size: 1.5rem;
+        border-radius: 2px;
+        border: none;
+        border-bottom: 3px solid transparent;
+        transition: all .3s;
+
+        &:focus{
+            outline: none;
+            border-bottom: 3px solid $Dark-green ;
+            box-shadow: 0 1rem 2rem rgba(black, .1);
+        }
+
+        &:focus:invalid{
+            border-bottom: 3px solid $dark-orange ;
+        }
+
+        &::-webkit-input-placeholder{
+            color: rgba($color: gray, $alpha: .7);
+        }
+    }
+    &__label{
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+        @include response (tab-port){
+            color: black;
+        }
+
+    }
+    &__input:placeholder-shown + &__label{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+}

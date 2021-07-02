@@ -1,0 +1,25 @@
+@import '../../sass/variable.scss';
+@import '../../sass/mixins.scss';
+
+.feature-card{
+    background-color: rgba($color-white, .8);
+    width: 20%;
+    // margin: 0 1rem;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: .3rem;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0, .15);
+    transition: transform .2s;
+    
+    &__logo{
+        margin-bottom: 6rem;
+    }
+    &__header{
+        text-transform: uppercase;
+    }
+    &:hover{
+        transform: translateY(-.5rem) scale(1.1);
+    }
+}

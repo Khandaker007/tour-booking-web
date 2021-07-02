@@ -1,0 +1,47 @@
+@import './sass/mixins.scss';
+
+/* 
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html{
+  font-size: 62.5%;  // 1rem = 10px 
+
+  @include response(tab-land){  // 1300px
+    font-size: 56.25%;  // 1rem = 9px, 9/16 = 56.25% 
+  }
+  @include response(tab-port){  // 900px
+    font-size: 50%;  // 1rem = 8px, 8/16 = 50%
+  }
+  @include response(big-desktop){  // 1800px +
+    font-size: 75%;  // 1rem = 12px, 12/16 = 75%
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+
+  @include response(tab-port){
+    padding: 0;
+  }
+
+  box-sizing: border-box;
+}
